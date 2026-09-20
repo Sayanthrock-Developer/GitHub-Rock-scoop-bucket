@@ -1,5 +1,7 @@
 param(
-    [String]$upstream = "<username>/<bucketname>:main"
+    [Parameter(Mandatory = $true)]
+    [ValidatePattern('^[^/\\s]+/[^:]+:main$')]
+    [String]$Upstream
 )
 
 if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
