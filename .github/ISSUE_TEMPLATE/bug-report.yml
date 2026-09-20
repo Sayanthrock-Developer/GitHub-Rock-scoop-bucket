@@ -1,0 +1,23 @@
+name: 🐛 Bug Report
+description: Report a problem with a GitHub Rock Scoop manifest.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+- type: input
+  attributes:
+    label: Package Name
+    description: Name of the Scoop package.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Expected/Current Behaviour
+    description: Describe what you expected and what happened.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Steps to Reproduce
+    render: console
+  validations:
+    required: true
