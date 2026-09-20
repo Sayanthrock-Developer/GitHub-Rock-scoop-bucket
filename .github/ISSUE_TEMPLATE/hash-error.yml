@@ -1,0 +1,16 @@
+name: 🔢 Hash Error
+description: Report an incorrect package hash.
+labels: ["bug"]
+body:
+- type: input
+  attributes:
+    label: Package Name and Version
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Scoop Output
+    description: Paste the complete failing Scoop output.
+    render: console
+  validations:
+    required: true
