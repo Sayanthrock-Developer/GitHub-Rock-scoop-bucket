@@ -1,0 +1,25 @@
+name: 📦 Package Request
+description: Request a GitHub Rock package for this bucket.
+title: "[Request]: "
+labels: ["package-request"]
+body:
+- type: input
+  attributes:
+    label: Name
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Description
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Homepage
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Download Link
+  validations:
+    required: true
