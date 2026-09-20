@@ -9,11 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: IssueHandler
-        runs-on: windows-latest
-        steps:
-          - uses: actions/checkout@main
-          - name: Handle issue
-            uses: ScoopInstaller/GithubActions@main
-            if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ScoopInstaller/GithubActions@main
+        if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
