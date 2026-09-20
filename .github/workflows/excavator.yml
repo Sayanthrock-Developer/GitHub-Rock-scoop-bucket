@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [github-rock-release]
+  schedule:
+    - cron: '20 */4 * * *'
+name: Excavator
+permissions:
+  contents: write
+jobs:
+  excavate:
+    name: Excavate
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Excavate
+        uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: 1
